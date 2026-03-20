@@ -1,0 +1,28 @@
+{
+  "name": "gcp-public-datasets-mcp-http",
+  "version": "1.0.0",
+  "description": "GCP Public Blockchain Datasets MCP Server — Exposed via Streamable HTTP transport",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && mkdir -p dist/public && cp -r src/public/* dist/public/ 2>/dev/null || xcopy src\\public dist\\public /E /I /Y >nul 2>&1 || true",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.9.0",
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "express": "^4.21.0",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
